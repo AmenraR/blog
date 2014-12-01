@@ -1,6 +1,6 @@
 <?php
 //brought in created variables from database.php to this file
-    require_once('../model/database.php');      //checks if it was used in memory
+    require_once(__DIR__ . '/../model/database.php');      //checks if it was used in memory
 
     $connection = new mysqli($host, $username, $password);   //creating the object mysqli that is used to connect to the database
     
@@ -8,7 +8,7 @@
         die("Error: ".$connection->connect_error);
     }
     else {
-        echo "Success.".$connection->host_info;
+        echo "Success: ".$connection->host_info;     //if no error there was a successful connection
     }
     
-    $connection->close();
+    $connection->close();       //closes connection
