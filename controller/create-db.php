@@ -7,8 +7,12 @@
     if($connection->connect_error){     //checks if there was a connection error
         die("Error: ".$connection->connect_error);
     }
-    else {
-        echo "Success: ".$connection->host_info;     //if no error there was a successful connection
+    
+    $exists = $connection->select_db($database);    //checks if the database exists
+    
+    if(!$exists){    //the if statement checks if the database is not found
+        echo "Database does not exist";
+        
     }
     
     $connection->close();       //closes connection
