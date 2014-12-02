@@ -11,8 +11,11 @@
     $exists = $connection->select_db($database);    //checks if the database exists
     
     if(!$exists){    //the if statement checks if the database is not found
-        echo "Database does not exist";
+        $query = $connection->query("CREATE DATABASE $database");    //send questions to create database
         
+        if($query){
+            echo 'Successfully created database: '. $database;
+        }
     }
     
     $connection->close();       //closes connection
