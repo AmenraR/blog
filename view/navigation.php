@@ -1,7 +1,10 @@
+<?php
+    require_once (__DIR__ . "/../model/config.php");
+?>
 <nav>
     <ul>
         
-        <li> <a href="/blog/post.php">Blog Post Form</a>
+        <li> <a href="<?php echo $path . "post.php"?>">Blog Post Form</a>
         </li>
         
     </ul>
