@@ -1,2 +1,2 @@
 <?php
-    $path = "/blog/post.php/";
+    $path = "/blog/";
